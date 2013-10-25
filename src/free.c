@@ -6,11 +6,14 @@ void free(void *ptr)
     if (ptr)
     {
         s_block *b = atov(vtoc(ptr) - BLOCK_SIZE);
-        b->is_free = 1;
-        if (b->prev && b->prev->is_free)
-            fusion_blocks(b->prev, b);
-        if (b->next && b->next->is_free)
-            fusion_blocks(b, b->next);
+        if (b && b->is_free)
+        {
+            b->is_free = 1;
+            if (b->prev && b->prev->is_free)
+                fusion_blocks(b->prev, b);
+            if (b->next && b->next->is_free)
+                fusion_blocks(b, b->next);
+        }
     }
 }
 
