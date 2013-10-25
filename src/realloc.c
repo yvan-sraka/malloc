@@ -3,7 +3,7 @@
 #include "free.h"
 #include "realloc.h"
 
-void* realloc(void *ptr, size_t size)
+void *realloc(void *ptr, size_t size)
 {
     if (!ptr)
         ptr = NULL;

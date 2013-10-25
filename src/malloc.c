@@ -2,7 +2,7 @@
 
 static s_block *token = NULL;
 
-void* malloc(size_t size)
+void *malloc(size_t size)
 {
     if (!size)
         return NULL;
@@ -20,7 +20,7 @@ void* malloc(size_t size)
     return b + 1;
 }
 
-s_block* new_block(size_t s)
+s_block *new_block(size_t s)
 {
     s = ((s / PAGE_SIZE) + 1) * PAGE_SIZE;
     s_block *b = mmap(0, s, PROT_READ | PROT_WRITE, MAP_ANON, -1, 0);
@@ -47,7 +47,7 @@ s_block* new_block(size_t s)
     return b;
 }
 
-s_block* find_block(size_t s)
+s_block *find_block(size_t s)
 {
     if (token->size >= s)
         return token;

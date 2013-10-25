@@ -4,7 +4,7 @@
 # define BLOCK_SIZE sizeof (struct s_block)
 # define ALIGN_8(x) (((((x) - 1) >> 3) << 3) + 8)
 
-#include <unistd.h>
+# include <unistd.h>
 
 typedef struct s_block
 {
@@ -14,7 +14,7 @@ typedef struct s_block
     struct s_block *next;
 } s_block;
 
-char* vtoc(void *v);
-void* atov(void *a);
+char *vtoc(void *v);
+void *atov(void *a);
 
 #endif /* !METADATA_H */
