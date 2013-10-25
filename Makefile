@@ -27,7 +27,7 @@ clean:
 .PHONY : check
 
 check:
-	$(CC) check/main.c -lmalloc -L. -g $(OBJ)
+	$(CC) check/main.c -lmalloc -L. $(CFLAGS) $(OBJ)
 
 export:
 	$(TAR) $(EXPORTAG) > $(EXPORTFILE)

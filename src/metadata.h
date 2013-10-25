@@ -2,7 +2,7 @@
 # define METADATA_H
 # define PAGE_SIZE getpagesize()
 # define BLOCK_SIZE sizeof (struct s_block)
-# define ALIGN_8(x) (((((x)-1)>>3)<<3)+8)
+# define ALIGN_8(x) (((((x) - 1) >> 3) << 3) + 8)
 
 #include <unistd.h>
 

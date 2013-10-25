@@ -49,8 +49,10 @@ s_block* new_block(size_t s)
 
 s_block* find_block(size_t s)
 {
-    for(s_block *b = token->next; b != token; b = b->next)
-        if(b->is_free && b->size >= s)
+    if (token->size >= s)
+        return token;
+    for (s_block *b = token->next; b != token; b = b->next)
+        if (b->is_free && b->size >= s)
             return b;
     return NULL;
 }
