@@ -1,6 +1,8 @@
 #ifndef MALLOC_H
 # define MALLOC_H
 
+# define _BSD_SOURCE
+
 # include <sys/mman.h>
 # include <errno.h>
 # include "metadata.h"
