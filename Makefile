@@ -2,7 +2,7 @@ CC=gcc
 SRC=$(addprefix src/, malloc.c free.c calloc.c realloc.c metadata.c memset.c memcpy.c)
 OBJ=$(SRC:.c=.o)
 TAR=git archive
-CFLAGS=-Wall -Werror -Wextra -std=c99 -pedantic -ggdb3
+CFLAGS=-Wall -Werror -Wextra -std=c99 -pedantic -O2 -ggdb3
 ARFLAGS=csr
 SOFLAGS=-shared -fPIC -o
 OFLAGS=-c -fPIC
@@ -26,7 +26,7 @@ clean:
 
 .PHONY : check
 
-check:
+check: all
 	$(CC) check/main.c -lmalloc -L. $(CFLAGS) $(OBJ)
 
 export:
