@@ -1,11 +1,13 @@
 CC=gcc
+
 SRC=$(addprefix src/, malloc.c free.c calloc.c realloc.c metadata.c memset.c memcpy.c)
 OBJ=$(SRC:.c=.o)
-TAR=git archive
+
 CFLAGS=-Wall -Werror -Wextra -std=c99 -pedantic -O2 -ggdb3
 ARFLAGS=csr
 SOFLAGS=-shared -fPIC -o
 OFLAGS=-c -fPIC
+
 LIBA=libmalloc.a
 LIBSO=libmalloc.so
 
@@ -19,15 +21,11 @@ all:$(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ $(OFLAGS) $<
 
-.PHONY : clean
-
 clean:
-	$(RM) $(OBJ) $(LIBA) $(LIBSO)
-
-.PHONY : check
+	rm -rf $(OBJ) $(LIBA) $(LIBSO)
 
 check: all
 	$(CC) check/main.c -lmalloc -L. $(CFLAGS) $(OBJ)
 
 export:
-	$(TAR) $(EXPORTAG) > $(EXPORTFILE)
+	git archive $(EXPORTAG) > $(EXPORTFILE)
