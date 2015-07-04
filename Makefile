@@ -23,9 +23,12 @@ all:$(OBJ)
 
 clean:
 	rm -rf $(OBJ) $(LIBA) $(LIBSO)
+.PHONY: clean
+
 
 check: all
 	$(CC) check/main.c -lmalloc -L. $(CFLAGS) $(OBJ)
+.PHONY: check
 
 export:
 	git archive $(EXPORTAG) > $(EXPORTFILE)
