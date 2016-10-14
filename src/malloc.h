@@ -5,8 +5,6 @@
 
 # include <sys/mman.h>
 # include <errno.h>
-# include <string.h> /* memset */
-# include <unistd.h> /* close */
 
 # include "metadata.h"
 
