@@ -30,5 +30,7 @@ check: all
 	$(CC) check/main.c -lmalloc -L. $(CFLAGS) $(OBJ)
 .PHONY: check
 
+test: check
+
 export:
 	git archive $(EXPORTAG) > $(EXPORTFILE)
