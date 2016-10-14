@@ -5,6 +5,9 @@
 
 # include <sys/mman.h>
 # include <errno.h>
+# include <string.h> /* memset */
+# include <unistd.h> /* close */
+
 # include "metadata.h"
 
 void *malloc(size_t size);
