@@ -1,7 +1,7 @@
 #ifndef MALLOC_H
 # define MALLOC_H
 
-# define _DEFAULT_SOURCE
+# define _GNU_SOURCE
 
 # include <sys/mman.h>
 # include <errno.h>
