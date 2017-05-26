@@ -1,10 +1,9 @@
-# malloc #
+malloc [![Build Status](https://travis-ci.com/yvan-sraka/malloc.svg?token=r9S39DVzZNKVuhr9yRC6&branch=master)](https://travis-ci.com/yvan-sraka/malloc)
+======
 
 This library implement C dynamic memory allocation functions.
 It use first fit algorithm with a looped double chained list of blocks.
 It use no dependencies.
-
-[![Build Status](https://travis-ci.com/yvan-sraka/malloc.svg?token=r9S39DVzZNKVuhr9yRC6&branch=master)](https://travis-ci.com/yvan-sraka/malloc)
 
 Memory allocator:
 ``` C
